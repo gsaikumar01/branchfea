@@ -1,0 +1,83 @@
+y21acs447@RP21SYS17 MINGW64 /z/DEVOPS/Repository/branchs
+$ git init
+Initialized empty Git repository in //win2012/y21acs/y21acs447/DEVOPS/Repository/branchs/.git/
+
+y21acs447@RP21SYS17 MINGW64 /z/DEVOPS/Repository/branchs (master)
+$ git remote add origin https://github.com/gsaikumar01/remoterepo.git
+
+y21acs447@RP21SYS17 MINGW64 /z/DEVOPS/Repository/branchs (master)
+$ git pull origin main
+remote: Enumerating objects: 10, done.
+remote: Counting objects: 100% (10/10), done.
+remote: Compressing objects: 100% (6/6), done.
+remote: Total 10 (delta 0), reused 7 (delta 0), pack-reused 0 (from 0)
+Unpacking objects: 100% (10/10), 1.44 KiB | 10.00 KiB/s, done.
+From https://github.com/gsaikumar01/remoterepo
+ * branch            main       -> FETCH_HEAD
+ * [new branch]      main       -> origin/main
+
+y21acs447@RP21SYS17 MINGW64 /z/DEVOPS/Repository/branchs (master)
+$ ls
+exmplee02  sampl01.txt  sampl02.txt
+
+y21acs447@RP21SYS17 MINGW64 /z/DEVOPS/Repository/branchs (master)
+$ git branch feature1
+
+y21acs447@RP21SYS17 MINGW64 /z/DEVOPS/Repository/branchs (master)
+$ git branch
+  feature1
+* master
+
+y21acs447@RP21SYS17 MINGW64 /z/DEVOPS/Repository/branchs (master)
+$ git checkout feature1
+Switched to branch 'feature1'
+
+y21acs447@RP21SYS17 MINGW64 /z/DEVOPS/Repository/branchs (feature1)
+$ git branch
+* feature1
+  master
+
+y21acs447@RP21SYS17 MINGW64 /z/DEVOPS/Repository/branchs (feature1)
+$ touch file4.txt
+
+y21acs447@RP21SYS17 MINGW64 /z/DEVOPS/Repository/branchs (feature1)
+$ git status
+On branch feature1
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        file4.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+y21acs447@RP21SYS17 MINGW64 /z/DEVOPS/Repository/branchs (feature1)
+$ git add .
+
+y21acs447@RP21SYS17 MINGW64 /z/DEVOPS/Repository/branchs (feature1)
+$ git commit -m "added file4 to feature branch"
+[feature1 491cf21] added file4 to feature branch
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 file4.txt
+
+y21acs447@RP21SYS17 MINGW64 /z/DEVOPS/Repository/branchs (feature1)
+$ git checkout master
+Switched to branch 'master'
+
+y21acs447@RP21SYS17 MINGW64 /z/DEVOPS/Repository/branchs (master)
+$ git merge feature1
+Updating 63ac912..491cf21
+Fast-forward
+ file4.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 file4.txt
+
+y21acs447@RP21SYS17 MINGW64 /z/DEVOPS/Repository/branchs (master)
+$ ls
+exmplee02  file4.txt  sampl01.txt  sampl02.txt
+
+y21acs447@RP21SYS17 MINGW64 /z/DEVOPS/Repository/branchs (master)
+$ git log --oneline
+491cf21 (HEAD -> master, feature1) added file4 to feature branch
+63ac912 (origin/main) Create exmplee02
+13afb16 second commit
+a664a44 first commit
+
