@@ -1,0 +1,395 @@
+y21acs447@RP21SYS17 MINGW64 /z/DEVOPS/Repository/pull
+$ git init
+Initialized empty Git repository in //win2012/y21acs/y21acs447/DEVOPS/Repository/pull/.git/
+
+y21acs447@RP21SYS17 MINGW64 /z/DEVOPS/Repository/pull (master)
+$ git remote add origin https://github.com/gsaikumar01/pullrepo.git
+
+y21acs447@RP21SYS17 MINGW64 /z/DEVOPS/Repository/pull (master)
+$ git pull origin main
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 0), reused 3 (delta 0), pack-reused 0 (from 0)
+Unpacking objects: 100% (3/3), 207 bytes | 3.00 KiB/s, done.
+From https://github.com/gsaikumar01/pullrepo
+ * branch            main       -> FETCH_HEAD
+ * [new branch]      main       -> origin/main
+
+y21acs447@RP21SYS17 MINGW64 /z/DEVOPS/Repository/pull (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+y21acs447@RP21SYS17 MINGW64 /z/DEVOPS/Repository/pull (master)
+$ git log
+commit ade31ecafca9455ef965fe2d36411adb0e42b7a9 (HEAD -> master, origin/main)
+Author: gsaikumar01 <saikumargantenapalli3@gmail.com>
+Date:   Wed Sep 4 08:27:19 2024 +0530
+
+    first commit
+
+y21acs447@RP21SYS17 MINGW64 /z/DEVOPS/Repository/pull (master)
+$ cd ..
+
+y21acs447@RP21SYS17 MINGW64 /z/DEVOPS/Repository
+$ cd fetch
+
+y21acs447@RP21SYS17 MINGW64 /z/DEVOPS/Repository/fetch
+$ git init
+Initialized empty Git repository in //win2012/y21acs/y21acs447/DEVOPS/Repository/fetch/.git/
+
+y21acs447@RP21SYS17 MINGW64 /z/DEVOPS/Repository/fetch (master)
+$ touch file03.txt
+
+y21acs447@RP21SYS17 MINGW64 /z/DEVOPS/Repository/fetch (master)
+$ git add file03.txt
+
+y21acs447@RP21SYS17 MINGW64 /z/DEVOPS/Repository/fetch (master)
+$ git remote add origin https://github.com/gsaikumar01/fetch.git
+
+y21acs447@RP21SYS17 MINGW64 /z/DEVOPS/Repository/fetch (master)
+$ git fetch
+
+y21acs447@RP21SYS17 MINGW64 /z/DEVOPS/Repository/fetch (master)
+$ git fetch
+
+y21acs447@RP21SYS17 MINGW64 /z/DEVOPS/Repository/fetch (master)
+$ git log
+fatal: your current branch 'master' does not have any commits yet
+
+y21acs447@RP21SYS17 MINGW64 /z/DEVOPS/Repository/fetch (master)
+$ git fetch
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+Unpacking objects: 100% (3/3), 863 bytes | 22.00 KiB/s, done.
+From https://github.com/gsaikumar01/fetch
+ * [new branch]      main       -> origin/main
+
+y21acs447@RP21SYS17 MINGW64 /z/DEVOPS/Repository/fetch (master)
+$ git checkout main
+Switched to a new branch 'main'
+A       file03.txt
+branch 'main' set up to track 'origin/main'.
+
+y21acs447@RP21SYS17 MINGW64 /z/DEVOPS/Repository/fetch (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   file03.txt
+
+
+y21acs447@RP21SYS17 MINGW64 /z/DEVOPS/Repository/fetch (main)
+$ git log
+commit 1e7c7e615dd2bdad667c106e7b3ef8a7614bb77f (HEAD -> main, origin/main)
+Author: gsaikumar01 <saikumargantenapalli3@gmail.com>
+Date:   Wed Sep 11 08:21:44 2024 +0530
+
+    Create ex02
+
+y21acs447@RP21SYS17 MINGW64 /z/DEVOPS/Repository/fetch (main)
+$ touch file004
+
+y21acs447@RP21SYS17 MINGW64 /z/DEVOPS/Repository/fetch (main)
+$ git diff --staged
+diff --git a/file03.txt b/file03.txt
+new file mode 100644
+index 0000000..e69de29
+
+y21acs447@RP21SYS17 MINGW64 /z/DEVOPS/Repository/fetch (main)
+$ git diff HEAD
+diff --git a/file03.txt b/file03.txt
+new file mode 100644
+index 0000000..e69de29
+
+y21acs447@RP21SYS17 MINGW64 /z/DEVOPS/Repository/fetch (main)
+$ git mv file03.txt
+usage: git mv [<options>] <source>... <destination>
+
+    -v, --verbose         be verbose
+    -n, --dry-run         dry run
+    -f, --force           force move/rename even if target exists
+    -k                    skip move/rename errors
+    --sparse              allow updating entries outside of the sparse-checkout cone
+
+
+y21acs447@RP21SYS17 MINGW64 /z/DEVOPS/Repository/fetch (main)
+$ ls
+ex02  file004  file03.txt
+
+y21acs447@RP21SYS17 MINGW64 /z/DEVOPS/Repository/fetch (main)
+$ mkdir sub-dir
+
+y21acs447@RP21SYS17 MINGW64 /z/DEVOPS/Repository/fetch (main)
+$ git mv file03.txt sub-dir
+
+y21acs447@RP21SYS17 MINGW64 /z/DEVOPS/Repository/fetch (main)
+$ ls
+ex02  file004  sub-dir/
+
+y21acs447@RP21SYS17 MINGW64 /z/DEVOPS/Repository/fetch (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   sub-dir/file03.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        file004
+
+
+y21acs447@RP21SYS17 MINGW64 /z/DEVOPS/Repository/fetch (main)
+$ touch file04.txt
+
+y21acs447@RP21SYS17 MINGW64 /z/DEVOPS/Repository/fetch (main)
+$ git add file04.txt
+
+y21acs447@RP21SYS17 MINGW64 /z/DEVOPS/Repository/fetch (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   file04.txt
+        new file:   sub-dir/file03.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        file004
+
+
+y21acs447@RP21SYS17 MINGW64 /z/DEVOPS/Repository/fetch (main)
+$ git rm --cached file04.txt
+rm 'file04.txt'
+
+y21acs447@RP21SYS17 MINGW64 /z/DEVOPS/Repository/fetch (main)
+$ git rm -r --cached sub-dir
+rm 'sub-dir/file03.txt'
+
+y21acs447@RP21SYS17 MINGW64 /z/DEVOPS/Repository/fetch (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        file004
+        file04.txt
+        sub-dir/
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+y21acs447@RP21SYS17 MINGW64 /z/DEVOPS/Repository/fetch (main)
+$ add file04.txt
+bash: add: command not found
+
+y21acs447@RP21SYS17 MINGW64 /z/DEVOPS/Repository/fetch (main)
+$ add file03.txt
+bash: add: command not found
+
+y21acs447@RP21SYS17 MINGW64 /z/DEVOPS/Repository/fetch (main)
+$ git add file03.txt
+fatal: pathspec 'file03.txt' did not match any files
+
+y21acs447@RP21SYS17 MINGW64 /z/DEVOPS/Repository/fetch (main)
+$ git add file04.txt
+
+y21acs447@RP21SYS17 MINGW64 /z/DEVOPS/Repository/fetch (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   file04.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        file004
+        sub-dir/
+
+
+y21acs447@RP21SYS17 MINGW64 /z/DEVOPS/Repository/fetch (main)
+$ git reset file04.txt
+
+y21acs447@RP21SYS17 MINGW64 /z/DEVOPS/Repository/fetch (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        file004
+        file04.txt
+        sub-dir/
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+y21acs447@RP21SYS17 MINGW64 /z/DEVOPS/Repository/fetch (main)
+$ touch file03.txt
+
+y21acs447@RP21SYS17 MINGW64 /z/DEVOPS/Repository/fetch (main)
+$ git add file03.txt
+
+y21acs447@RP21SYS17 MINGW64 /z/DEVOPS/Repository/fetch (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   file03.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        file004
+        file04.txt
+        sub-dir/
+
+
+y21acs447@RP21SYS17 MINGW64 /z/DEVOPS/Repository/fetch (main)
+$ git rm --cached file03.txt
+rm 'file03.txt'
+
+y21acs447@RP21SYS17 MINGW64 /z/DEVOPS/Repository/fetch (main)
+$ git rm -r --cached sub-dir
+fatal: pathspec 'sub-dir' did not match any files
+
+y21acs447@RP21SYS17 MINGW64 /z/DEVOPS/Repository/fetch (main)
+$ git rm -r -- cached sub-dir
+fatal: pathspec 'cached' did not match any files
+
+y21acs447@RP21SYS17 MINGW64 /z/DEVOPS/Repository/fetch (main)
+$ reset HEAD
+reset: unknown terminal type HEAD
+Terminal type?
+
+y21acs447@RP21SYS17 MINGW64 /z/DEVOPS/Repository/fetch (main)
+$ git reset HEAD
+
+y21acs447@RP21SYS17 MINGW64 /z/DEVOPS/Repository/fetch (main)
+$ git reset --hard HEAD
+HEAD is now at 1e7c7e6 Create ex02
+
+y21acs447@RP21SYS17 MINGW64 /z/DEVOPS/Repository/fetch (main)
+$ git reset --soft 1e7c7e6
+
+y21acs447@RP21SYS17 MINGW64 /z/DEVOPS/Repository/fetch (main)
+$ git log
+commit 1e7c7e615dd2bdad667c106e7b3ef8a7614bb77f (HEAD -> main, origin/main)
+Author: gsaikumar01 <saikumargantenapalli3@gmail.com>
+Date:   Wed Sep 11 08:21:44 2024 +0530
+
+    Create ex02
+
+y21acs447@RP21SYS17 MINGW64 /z/DEVOPS/Repository/fetch (main)
+$ git log --oneline
+1e7c7e6 (HEAD -> main, origin/main) Create ex02
+
+y21acs447@RP21SYS17 MINGW64 /z/DEVOPS/Repository/fetch (main)
+$ cd ..
+
+y21acs447@RP21SYS17 MINGW64 /z/DEVOPS/Repository
+$ cd rebase
+
+y21acs447@RP21SYS17 MINGW64 /z/DEVOPS/Repository/rebase
+$ git init
+Initialized empty Git repository in //win2012/y21acs/y21acs447/DEVOPS/Repository/rebase/.git/
+
+y21acs447@RP21SYS17 MINGW64 /z/DEVOPS/Repository/rebase (master)
+$ git remote add origin https://github.com/gsaikumar01/remoterepo.git
+
+y21acs447@RP21SYS17 MINGW64 /z/DEVOPS/Repository/rebase (master)
+$ git pull origin main
+remote: Enumerating objects: 10, done.
+remote: Counting objects: 100% (10/10), done.
+remote: Compressing objects: 100% (6/6), done.
+remote: Total 10 (delta 0), reused 7 (delta 0), pack-reused 0 (from 0)
+Unpacking objects: 100% (10/10), 1.44 KiB | 10.00 KiB/s, done.
+From https://github.com/gsaikumar01/remoterepo
+ * branch            main       -> FETCH_HEAD
+ * [new branch]      main       -> origin/main
+
+y21acs447@RP21SYS17 MINGW64 /z/DEVOPS/Repository/rebase (master)
+$ ls
+exmplee02  sampl01.txt  sampl02.txt
+
+y21acs447@RP21SYS17 MINGW64 /z/DEVOPS/Repository/rebase (master)
+$ git branch feature2
+
+y21acs447@RP21SYS17 MINGW64 /z/DEVOPS/Repository/rebase (master)
+$ git checkout feature2
+Switched to branch 'feature2'
+
+y21acs447@RP21SYS17 MINGW64 /z/DEVOPS/Repository/rebase (feature2)
+$ git branch
+* feature2
+  master
+
+y21acs447@RP21SYS17 MINGW64 /z/DEVOPS/Repository/rebase (feature2)
+$ touch file5.txt
+
+y21acs447@RP21SYS17 MINGW64 /z/DEVOPS/Repository/rebase (feature2)
+$ git status
+On branch feature2
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        file5.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+y21acs447@RP21SYS17 MINGW64 /z/DEVOPS/Repository/rebase (feature2)
+$ git add .
+
+y21acs447@RP21SYS17 MINGW64 /z/DEVOPS/Repository/rebase (feature2)
+$ git commit -m "added file5 to feature2 branch"
+[feature2 7951985] added file5 to feature2 branch
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 file5.txt
+
+y21acs447@RP21SYS17 MINGW64 /z/DEVOPS/Repository/rebase (feature2)
+$ git status
+On branch feature2
+nothing to commit, working tree clean
+
+y21acs447@RP21SYS17 MINGW64 /z/DEVOPS/Repository/rebase (feature2)
+$ git rebase master
+Current branch feature2 is up to date.
+
+y21acs447@RP21SYS17 MINGW64 /z/DEVOPS/Repository/rebase (feature2)
+$ git checkout master
+Switched to branch 'master'
+
+y21acs447@RP21SYS17 MINGW64 /z/DEVOPS/Repository/rebase (master)
+$ git merge feature2
+Updating 63ac912..7951985
+Fast-forward
+ file5.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 file5.txt
+
+y21acs447@RP21SYS17 MINGW64 /z/DEVOPS/Repository/rebase (master)
+$ ls
+exmplee02  file5.txt  sampl01.txt  sampl02.txt
+
+y21acs447@RP21SYS17 MINGW64 /z/DEVOPS/Repository/rebase (master)
+$ git log -n 2
+commit 7951985f0733dc710463ca47870108f63cbb00e2 (HEAD -> master, feature2)
+Author: gsaikumar01 <saikumargantenapalli3@gmail.com>
+Date:   Wed Sep 11 08:46:37 2024 +0530
+
+    added file5 to feature2 branch
+
+commit 63ac912e04f46353138520ac6c998c0471b50e90 (origin/main)
+Author: gsaikumar01 <saikumargantenapalli3@gmail.com>
+Date:   Wed Sep 11 08:43:32 2024 +0530
+
+    Create exmplee02
